@@ -22,7 +22,7 @@ steps:
   displayName: 'firmware'
 
 - task: GitHubRelease@0
-  condition: and(succeeded(), ep(variables['Build.SourceBranch'], 'refs/heads/master'))
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   displayName: 'release'
   inputs:
     gitHubConnection: undefinedTea
