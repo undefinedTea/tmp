@@ -1,5 +1,5 @@
 variables:
-- group: undefined
+- group: tmp_particle
 
 trigger:
 - master
@@ -12,13 +12,16 @@ steps:
 - task: NodeTool@0
   displayName: 'environment'
 
-- script: npm install --global particle-cli
+- script:
+    npm install --global particle-cli
   displayName: 'configuration'
 
-- script: particle login --username $(PARTICLE) --password $(PARTICLE_)
+- script:
+    particle login --username $(PARTICLE) --password $(PARTICLE_)
   displayName: '...'
 
-- script: particle compile argon --target 0.9.0 --saveTo $(Build.ArtifactStagingDirectory)/tmp.firmware.bin
+- script:
+    particle compile argon --target 0.9.0 --saveTo $(Build.ArtifactStagingDirectory)/tmp.firmware.bin
   displayName: 'firmware'
 
 - task: GitHubRelease@0
