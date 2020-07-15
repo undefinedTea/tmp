@@ -21,7 +21,7 @@ steps:
   displayName: '...'
 
 - script:
-    particle compile argon --target 1.4.1 --saveTo $(Build.ArtifactStagingDirectory)/tmp.firmware.bin
+    particle compile argon --target 1.5.1 --saveTo $(Build.ArtifactStagingDirectory)/tmp.firmware.bin
   displayName: 'firmware'
 
 - script:
