@@ -11,6 +11,8 @@ pool:
 steps:
 - task: NodeTool@0
   displayName: 'environment'
+  inputs:
+    versionSpec: '14.3.0'
 
 - script:
     npm install --global particle-cli
