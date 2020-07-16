@@ -17,8 +17,8 @@ steps:
   displayName: 'configuration'
 
 - script:
-    particle login --username $(PARTICLE) --password $(PARTICLE_)
-  displayName: '...'
+    particle login --username $(PARTICLE) --password $(PARTICLE_) --verbose
+  displayName: 'authenticate...'
 
 - script:
     particle compile argon --target 1.5.1 --saveTo $(Build.ArtifactStagingDirectory)/tmp.firmware.bin
